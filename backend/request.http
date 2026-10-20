@@ -12,7 +12,7 @@ Content-Type: application/json
   "dataNascimento": "1990-05-10",
   "salario": 3000,
   "cnpjEmpregador": "11.222.333/0001-81",
-  "valorSolicitado": 10000,
+  "valorSolicitado": 30000,
   "parcelas": 48
 }
 
