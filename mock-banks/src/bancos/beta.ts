@@ -41,10 +41,15 @@ bancoBeta.post("/banco-beta/v1/credit-analysis", (req, res) => {
 
   const installmentValue = calcularParcela(amount, TAXA_MENSAL, installments);
 
-    if (installmentValue > monthly_income * MARGEM_MAXIMA) {  
-        res.json({ approved: false, reason_code: "R02" });
-        return;
-    }
+  if (installmentValue > monthly_income * MARGEM_MAXIMA) {
+    res.json({ approved: false, reason_code: "R02" });
+    return;
+  }
 
-  res.json({ approved: true, rate: TAXA_MENSAL, installment_value: installmentValue, term: installments });
+  res.json({
+    approved: true,
+    rate: TAXA_MENSAL,
+    installment_value: installmentValue,
+    term: installments,
+  });
 });
