@@ -1,10 +1,8 @@
 export const PERCENTUAL_MARGEM_CONSIGNAVEL = 0.35;
 
-
-export function arredondarCentavos( valor : number):
-number{
-    return Math.round(valor * 100) / 100;
-}   
+export function arredondarCentavos(valor: number): number {
+  return Math.round(valor * 100) / 100;
+}
 
 /**
  * Calcula o valor da parcela pela Tabela Price.
@@ -13,25 +11,27 @@ number{
  * @param meses número de parcelas
  */
 
-export function calcularParcela(valor: number, taxaMensal: number, meses: number): 
-number{
-    if( valor <= 0 || meses <= 0 || taxaMensal <0) {
-       throw new Error("Parâmetros inválidos para cálculo da parcela.");
-    }
+export function calcularParcela(
+  valor: number,
+  taxaMensal: number,
+  meses: number,
+): number {
+  if (valor <= 0 || meses <= 0 || taxaMensal < 0) {
+    throw new Error("Parâmetros inválidos para cálculo da parcela.");
+  }
 
-    if (taxaMensal === 0) {
-        return arredondarCentavos(valor/ meses);
-    
-    }
+  if (taxaMensal === 0) {
+    return arredondarCentavos(valor / meses);
+  }
 
-    const parcela = (valor * taxaMensal) / (1 - Math.pow(1 + taxaMensal, -meses));
-    return arredondarCentavos(parcela);
+  const parcela = (valor * taxaMensal) / (1 - Math.pow(1 + taxaMensal, -meses));
+  return arredondarCentavos(parcela);
 }
 
 export function calcularMargemConsignavel(salario: number): number {
-   return arredondarCentavos(salario * PERCENTUAL_MARGEM_CONSIGNAVEL);
+  return arredondarCentavos(salario * PERCENTUAL_MARGEM_CONSIGNAVEL);
 }
 
-export function calcularValorTotal(parcela: number, meses: number): number{
-    return arredondarCentavos(parcela * meses);
+export function calcularValorTotal(parcela: number, meses: number): number {
+  return arredondarCentavos(parcela * meses);
 }
