@@ -11,11 +11,7 @@ export function arredondarCentavos(valor: number): number {
  * @param meses número de parcelas
  */
 
-export function calcularParcela(
-  valor: number,
-  taxaMensal: number,
-  meses: number,
-): number {
+export function calcularParcela(valor: number, taxaMensal: number, meses: number): number {
   if (valor <= 0 || meses <= 0 || taxaMensal < 0) {
     throw new Error("Parâmetros inválidos para cálculo da parcela.");
   }

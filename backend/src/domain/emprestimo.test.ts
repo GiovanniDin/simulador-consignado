@@ -1,9 +1,5 @@
 import { describe, it, expect } from "vitest";
-import {
-  calcularParcela,
-  calcularMargemConsignavel,
-  calcularValorTotal,
-} from "./emprestimo";
+import { calcularParcela, calcularMargemConsignavel, calcularValorTotal } from "./emprestimo";
 
 describe("calcularParcela", () => {
   it("calcula pela Tabbela Price", () => {
