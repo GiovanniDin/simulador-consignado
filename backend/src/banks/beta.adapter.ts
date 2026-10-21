@@ -56,12 +56,12 @@ export const betaAdapter: BankAdapter = {
       };
     }
 
-     return {
-          banco: NOME,
-          status: "APROVADO",
-          taxaMensal: dados.rate, // o Beta já manda em decimal 
-          parcela: dados.installment_value,
-          valorTotal: calcularValorTotal(dados.installment_value, dados.term),
-        };
+    return {
+      banco: NOME,
+      status: "APROVADO",
+      taxaMensal: dados.rate, // o Beta já manda em decimal
+      parcela: dados.installment_value,
+      valorTotal: calcularValorTotal(dados.installment_value, dados.term),
+    };
   },
-};  
+};

@@ -4,7 +4,7 @@ import type { SimulacaoInput } from "../validation/simulacao.schema";
 import { simularEmTodosOsBancos } from "./simulacao.service";
 
 const input: SimulacaoInput = {
-  nome: "Maria Zélia",
+  nome: "Maria Souza",
   email: "maria@email.com",
   cpf: "52998224725",
   dataNascimento: "1990-05-10",

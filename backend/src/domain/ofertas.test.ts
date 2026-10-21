@@ -18,6 +18,6 @@ describe("escolherMelhorOferta", () => {
       { banco: "Banco B", status: "INDISPONIVEL", motivo: "O banco não respondeu a tempo" },
     ];
 
-    expect(escolherMelhorOferta(resultados)) .toBeNull();
+    expect(escolherMelhorOferta(resultados)).toBeNull();
   });
 });

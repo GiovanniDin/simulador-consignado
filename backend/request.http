@@ -31,3 +31,11 @@ Content-Type: application/json
   "parcelas": 200
 }
 
+### JSON malformado (vírgula sobrando)
+POST http://localhost:3000/simulacoes
+Content-Type: application/json
+
+{ "nome": "Maria", }
+
+### Rota inexistente
+GET http://localhost:3000/nao-existe
