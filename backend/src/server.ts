@@ -1,6 +1,7 @@
-import { simulacaoRoutes } from "./routes/simulacao.routes";
 import express from "express";
 import cors from "cors";
+import { rotaNaoEncontrada, tratarErros } from "./middlewares/erros";
+import { simulacaoRoutes } from "./routes/simulacao.routes";
 
 const app = express();
 app.disable("x-powered-by");
@@ -17,6 +18,10 @@ app.get("/health", (_req, res) => {
 });
 
 app.use(simulacaoRoutes);
+
+// Precisam ficar DEPOIS de todas as rotas
+app.use(rotaNaoEncontrada);
+app.use(tratarErros);
 
 app.listen(PORT, () => {
   console.log(`API rodando em http://localhost:${PORT}`);

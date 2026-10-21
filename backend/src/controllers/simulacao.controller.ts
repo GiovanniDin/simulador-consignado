@@ -4,6 +4,7 @@ import { alfaAdapter } from "../banks/alfa.adapter";
 import { betaAdapter } from "../banks/beta.adapter";
 import { simularEmTodosOsBancos } from "../services/simulacao.service";
 import { simulacaoSchema } from "../validation/simulacao.schema";
+import { escolherMelhorOferta } from "../domain/ofertas";
 
 const BANCOS = [alfaAdapter, betaAdapter];
 
@@ -21,5 +22,5 @@ export async function criarSimulacao(req: Request, res: Response): Promise<void>
   }
 
   const resultados = await simularEmTodosOsBancos(resultado.data, BANCOS);
-  res.status(200).json({ resultados });
+  res.status(200).json({ resultados, melhorOferta: escolherMelhorOferta(resultados) });
 }
