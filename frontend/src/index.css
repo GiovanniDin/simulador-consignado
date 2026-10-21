@@ -1,0 +1,61 @@
+:root {
+  --fundo: #f5f7fb;
+  --painel: #ffffff;
+  --texto: #1c2230;
+  --suave: #5b6475;
+  --borda: #dde2ea;
+  --primaria: #1f5fbf;
+  --verde: #1d7a46;
+  --verde-claro: #e6f4ec;
+  --vermelho: #b42318;
+  --vermelho-claro: #fdecea;
+  --cinza-claro: #eef0f4;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.pagina { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
+.topo h1 { margin: 0 0 4px; font-size: 1.8rem; }
+.topo p { margin: 0 0 24px; color: var(--suave); }
+
+.painel { background: var(--painel); border: 1px solid var(--borda); border-radius: 12px; padding: 24px; }
+.formulario { display: grid; gap: 16px; }
+.linha { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 600px) { .linha { grid-template-columns: 1fr; } }
+
+.campo { display: flex; flex-direction: column; gap: 6px; }
+.campo label { font-size: 0.9rem; font-weight: 600; }
+.campo input { font: inherit; padding: 10px 12px; border: 1px solid var(--borda); border-radius: 8px; }
+.campo input:focus { outline: 2px solid var(--primaria); outline-offset: 1px; }
+.campo input[aria-invalid="true"] { border-color: var(--vermelho); }
+.campo-erro { color: var(--vermelho); font-size: 0.85rem; }
+
+button { font: inherit; font-weight: 600; padding: 12px; border: 0; border-radius: 8px; background: var(--primaria); color: #fff; cursor: pointer; }
+button:disabled { opacity: 0.6; cursor: wait; }
+
+.alerta { margin-top: 16px; padding: 12px 16px; border-radius: 8px; background: var(--vermelho-claro); color: var(--vermelho); }
+.aviso { color: var(--suave); }
+
+.resultados { margin-top: 32px; }
+.resultados h2 { margin: 0 0 12px; }
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+
+.card { background: var(--painel); border: 1px solid var(--borda); border-left: 5px solid var(--borda); border-radius: 10px; padding: 16px 18px; }
+.card header { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.card h3 { margin: 0; font-size: 1.1rem; }
+.selo { font-size: 0.8rem; font-weight: 600; padding: 3px 10px; border-radius: 99px; background: var(--cinza-claro); }
+.card-aprovado { border-left-color: var(--verde); }
+.card-aprovado .selo { background: var(--verde-claro); color: var(--verde); }
+.card-reprovado { border-left-color: var(--vermelho); }
+.card-reprovado .selo { background: var(--vermelho-claro); color: var(--vermelho); }
+.card-indisponivel { border-left-color: var(--suave); }
+.destaque { margin: 8px 0 0; font-weight: 600; color: var(--verde); }
+.card dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 12px 0 0; }
+.card dt { color: var(--suave); }
+.card dd { margin: 0; text-align: right; }
+.valor-principal { font-size: 1.3rem; font-weight: 700; }
+.motivo { margin: 12px 0 0; color: var(--suave); }
