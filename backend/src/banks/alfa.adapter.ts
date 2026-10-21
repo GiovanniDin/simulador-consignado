@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { config } from "../config";
 import { calcularValorTotal } from "../domain/emprestimo";
-import type{ BankAdapter } from  "./bank.types";    
+import type { BankAdapter } from "./bank.types";
 
 const NOME = "Banco Alfa";
 

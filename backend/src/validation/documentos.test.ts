@@ -36,7 +36,7 @@ describe("validarCnpj", () => {
     expect(validarCnpj("00.000.000/0000-00")).toBe(false);
   });
 
-  it("reijeita o CNPJ com o tamanho incorreto", () =>{
-    expect(validarCnpj("255")) .toBe(false);
+  it("reijeita o CNPJ com o tamanho incorreto", () => {
+    expect(validarCnpj("255")).toBe(false);
   });
 });

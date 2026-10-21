@@ -64,4 +64,4 @@ export const betaAdapter: BankAdapter = {
           valorTotal: calcularValorTotal(dados.installment_value, dados.term),
         };
   },
-};
+};  

@@ -12,7 +12,11 @@ export async function simularEmTodosOsBancos(
     if (resposta.status === "fulfilled") {
       return resposta.value;
     }
-    return { banco: adapters[i].nome, status: "INDISPONIVEL", motivo: descreverFalha(resposta.reason) };
+    return {
+      banco: adapters[i].nome,
+      status: "INDISPONIVEL",
+      motivo: descreverFalha(resposta.reason),
+    };
   });
 }
 
