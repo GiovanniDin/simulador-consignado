@@ -15,12 +15,19 @@ export async function simularEmTodosOsBancos(
     if (resposta.status === "fulfilled") {
       return resposta.value;
     }
-    return { banco: adapters[i].nome, status: "INDISPONIVEL", motivo: descreverFalha(resposta.reason) };
+    return {
+      banco: adapters[i].nome,
+      status: "INDISPONIVEL",
+      motivo: descreverFalha(resposta.reason),
+    };
   });
 }
 
 /** Chama um banco e registra quanto tempo ele levou e como terminou */
-async function consultarComMedicao(adapter: BankAdapter, input: SimulacaoInput): Promise<ResultadoBanco> {
+async function consultarComMedicao(
+  adapter: BankAdapter,
+  input: SimulacaoInput,
+): Promise<ResultadoBanco> {
   const inicio = performance.now();
   const duracaoMs = () => Math.round(performance.now() - inicio);
 

@@ -8,7 +8,11 @@ export function mascararCpf(cpf: string): string {
 }
 
 /** Log estruturado: uma linha JSON por evento, fácil de buscar e filtrar */
-export function registrarLog(nivel: NivelLog, evento: string, dados: Record<string, unknown> = {}): void {
+export function registrarLog(
+  nivel: NivelLog,
+  evento: string,
+  dados: Record<string, unknown> = {},
+): void {
   const linha = JSON.stringify({ momento: new Date().toISOString(), nivel, evento, ...dados });
 
   if (nivel === "error") {
